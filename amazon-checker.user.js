@@ -13,8 +13,8 @@
 // @match        https://www.amazon.com.au/gp/cart/view.html*
 // @match        https://www.amazon.co.jp/gp/cart/view.html*
 // @match        https://www.amazon.co.nl/gp/cart/view.html*
-// @updateURL    https://raw.githubusercontent.com/yourusername/yourrepo/main/amazon-checker.user.js
-// @downloadURL  https://raw.githubusercontent.com/yourusername/yourrepo/main/amazon-checker.user.js
+// @updateURL    https://raw.githubusercontent.com/pixelatedflower172/AmazonSFLChecker/main/amazon-checker.user.js
+// @downloadURL  https://raw.githubusercontent.com/pixelatedflower172/AmazonSFLChecker/main/amazon-checker.user.js
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
