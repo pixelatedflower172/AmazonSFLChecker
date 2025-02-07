@@ -78,9 +78,9 @@
         });
 
         if (availableItems.length > 0) {
-            console.log("✅ Available Items Found:", availableItems);
+            console.log("Available Items Found:", availableItems);
             let itemNames = availableItems.map(item => item.title).join("\n");
-            alert(`🎉 Items Available!\n\n${itemNames}`);
+            alert(`Items Available!\n\n${itemNames}`);
 
             availableItems.forEach(({ asin, offeringId, title }) => {
                 let hostname = window.location.host;
