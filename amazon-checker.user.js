@@ -23,7 +23,7 @@
 (function() {
     'use strict';
 
-    const CHECK_INTERVAL = 5000; // Refresh every 5 seconds
+    const CHECK_INTERVAL = 2000; // Refresh every 5 seconds
     const SHOW_MORE_DELAY = 1500; // Wait after clicking "Show More"
 
     async function clickShowMore() {
