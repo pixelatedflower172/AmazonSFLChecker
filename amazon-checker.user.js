@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Amazon SFL Availability Checker
 // @namespace    https://www.amazon.co.uk/*
-// @version      1.1
+// @version      1.4
 // @description  Auto-checks saved-for-later items, alerts if available, and opens checkout.
 // @match        https://www.amazon.com/gp/cart/view.html*
 // @match        https://www.amazon.co.uk/gp/cart/view.html*
@@ -15,7 +15,8 @@
 // @match        https://www.amazon.co.nl/gp/cart/view.html*
 // @updateURL    https://raw.githubusercontent.com/pixelatedflower172/AmazonSFLChecker/main/amazon-checker.user.js
 // @downloadURL  https://raw.githubusercontent.com/pixelatedflower172/AmazonSFLChecker/main/amazon-checker.user.js
-// @grant        none
+// @grant        GM_setValue
+// @grant        GM_getValue
 // @run-at       document-idle
 // ==/UserScript==
 
@@ -23,22 +24,17 @@
     'use strict';
 
     const CHECK_INTERVAL = 5000; // Refresh every 5 seconds
-    const SCROLL_DELAY = 1000; // Wait 1 second between scrolls
-    const MAX_SCROLL_ATTEMPTS = 10; // Prevent infinite scrolling
+    const SHOW_MORE_DELAY = 1500; // Wait after clicking "Show More"
 
-    async function loadAllItems() {
-        let attempts = 0;
-        let prevHeight = 0;
+    async function clickShowMore() {
+        let showMoreButton = document.querySelector('.a-declarative [aria-labelledby="sc-saved-cart-show-more-text"]');
 
-        while (attempts < MAX_SCROLL_ATTEMPTS) {
-            window.scrollTo(0, document.body.scrollHeight);
-            await new Promise(resolve => setTimeout(resolve, SCROLL_DELAY));
-
-            let newHeight = document.body.scrollHeight;
-            if (newHeight === prevHeight) break; // Stop if no new items loaded
-
-            prevHeight = newHeight;
-            attempts++;
+        if (showMoreButton) {
+            console.log("🔄 Clicking 'Show More' button...");
+            showMoreButton.click();
+            await new Promise(resolve => setTimeout(resolve, SHOW_MORE_DELAY)); // Wait for items to load
+        } else {
+            console.log("✅ All items are visible. Proceeding to check availability.");
         }
     }
 
@@ -78,9 +74,9 @@
         });
 
         if (availableItems.length > 0) {
-            console.log("Available Items Found:", availableItems);
+            console.log("✅ Available Items Found:", availableItems);
             let itemNames = availableItems.map(item => item.title).join("\n");
-            alert(`Items Available!\n\n${itemNames}`);
+            alert(`🎉 Items Available!\n\n${itemNames}`);
 
             availableItems.forEach(({ asin, offeringId, title }) => {
                 let hostname = window.location.host;
@@ -99,7 +95,7 @@
     }
 
     (async function() {
-        await loadAllItems(); // Ensure all saved items are loaded first
+        await clickShowMore(); // Ensure all saved items are loaded first
         setTimeout(checkAvailability, 2000); // Wait 2s before checking
     })();
 })();
