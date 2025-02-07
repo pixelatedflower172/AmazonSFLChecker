@@ -71,7 +71,7 @@
             newAvailableItems.forEach(({ asin, offeringId }) => {
                 let hostname = window.location.host;
                 let splitStr = hostname.substring(hostname.indexOf('.') + 1);
-                let checkoutUrl = `https://www.${splitStr}/gp/aws/cart/add.html?ASIN.1=${asin}&offeringID.1=${offeringId}&Quantity.1=1`;
+                let checkoutUrl = `https://www.${splitStr}/gp/checkoutportal/enter-checkout.html/?&discoveredAsins.1=${asin}&asin=${asin}&quantity=1&buyNow=1&offeringID.1=${offeringId}`;
                 console.log(`🛒 Checkout Link for ASIN ${asin}:`, checkoutUrl);
                 window.open(checkoutUrl, '_blank'); // Open checkout
             });
