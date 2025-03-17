@@ -547,7 +547,7 @@
         <button class="edit-btn" id="editPriceButton">✎</button>
       </p>
       <p>Last Checked: <span id="lastChecked">N/A</span></p>
-      <p><b>By   <span id="animatedAuthor">._.masteroogway._.</span></b></p>
+      <p><i>By   <span id="animatedAuthor">._.masteroogway._.</span></i></p>
       <p><a id="sourceCodeLink" href="https://yourgithubrepo.com" target="_blank" rel="noopener noreferrer">View Source Code</a></p>
       <button id="toggleLogsBtn">Show Logs</button>
       <div id="consoleLogsContainer"></div>
