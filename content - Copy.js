@@ -548,7 +548,7 @@
       </p>
       <p>Last Checked: <span id="lastChecked">N/A</span></p>
       <p><i>By   <span id="animatedAuthor">._.masteroogway._.</span></i></p>
-      <p><a id="sourceCodeLink" href="https://yourgithubrepo.com" target="_blank" rel="noopener noreferrer">View Source Code</a></p>
+      <p><a id="sourceCodeLink" href="https://github.com/pixelatedflower172/AmazonSFLChecker/blob/main/content%20-%20Copy.js" target="_blank" rel="noopener noreferrer">View Source Code</a></p>
       <button id="toggleLogsBtn">Show Logs</button>
       <div id="consoleLogsContainer"></div>
     `;
