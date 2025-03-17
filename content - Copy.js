@@ -536,7 +536,7 @@
         <button class="edit-btn" id="editPriceButton">✎</button>
       </p>
       <p>Last Checked: <span id="lastChecked">N/A</span></p>
-      <p>Author: <span id="animatedAuthor">master oogway</span></p>
+      <p>By   <span id="animatedAuthor">._.masteroogway._.</span></p>
       <button id="toggleLogsBtn">Show Logs</button>
       <div id="consoleLogsContainer"></div>
     `;
