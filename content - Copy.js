@@ -283,6 +283,17 @@
     #toggleLogsBtn:hover {
       text-decoration: underline;
     }
+    #sourceCodeLink {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #0073bb;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  #sourceCodeLink:hover {
+    text-decoration: underline;
+  }
     /* In-stock pulse animation for product image */
     .in-stock-pulse {
       animation: pulse 1s infinite;
@@ -537,7 +548,7 @@
       </p>
       <p>Last Checked: <span id="lastChecked">N/A</span></p>
       <p><b>By   <span id="animatedAuthor">._.masteroogway._.</span></b></p>
-      <a href="https://github.com/pixelatedflower172/AmazonSFLChecker/blob/main/content%20-%20Copy.js">Source Code</a>
+      <p><a id="sourceCodeLink" href="https://yourgithubrepo.com" target="_blank" rel="noopener noreferrer">View Source Code</a></p>
       <button id="toggleLogsBtn">Show Logs</button>
       <div id="consoleLogsContainer"></div>
     `;
